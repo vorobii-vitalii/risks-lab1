@@ -12,8 +12,8 @@ import guru.nidi.graphviz.model.MutableNode;
 public class PairResultNode implements ResultNode {
 	private final ResultNode left;
 	private final ResultNode right;
-	private final int cost;
-	private final int score;
+	private final double cost;
+	private final double score;
 	private final int leftScore;
 	private final int rightScore;
 
@@ -32,7 +32,7 @@ public class PairResultNode implements ResultNode {
 	}
 
 	@Override
-	public int cost() {
+	public double cost() {
 		return cost;
 	}
 

@@ -1,10 +1,10 @@
 package org.example;
 
 public class LeafGraphNode implements GraphNode {
-	private final int[] costs;
+	private final double[] costs;
 	private final String paramName;
 
-	public LeafGraphNode(int[] costs, String paramName) {
+	public LeafGraphNode(double[] costs, String paramName) {
 		this.costs = costs;
 		this.paramName = paramName;
 	}

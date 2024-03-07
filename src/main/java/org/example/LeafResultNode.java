@@ -10,11 +10,11 @@ import guru.nidi.graphviz.attribute.Label;
 import guru.nidi.graphviz.model.MutableNode;
 
 public class LeafResultNode implements ResultNode {
-	private final int cost;
+	private final double cost;
 	private final String paramName;
 	private final int expectedScore;
 
-	public LeafResultNode(int cost, String paramName, int expectedScore) {
+	public LeafResultNode(double cost, String paramName, int expectedScore) {
 		this.cost = cost;
 		this.paramName = paramName;
 		this.expectedScore = expectedScore;
@@ -26,7 +26,7 @@ public class LeafResultNode implements ResultNode {
 	}
 
 	@Override
-	public int cost() {
+	public double cost() {
 		return cost;
 	}
 

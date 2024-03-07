@@ -6,6 +6,6 @@ import guru.nidi.graphviz.model.MutableNode;
 
 public interface ResultNode {
 	boolean isEmpty();
-	int cost();
+	double cost();
 	void createGraph(GraphCreator graphCreator, @Nullable MutableNode mutableNode);
 }

@@ -13,16 +13,16 @@ import guru.nidi.graphviz.attribute.Label;
 import guru.nidi.graphviz.model.MutableNode;
 
 public class ListResult implements ResultNode {
-	public static final int DEFAULT_COST = Integer.MAX_VALUE;
+	public static final double DEFAULT_COST = Integer.MAX_VALUE;
 	private final List<ResultNode> resultNodes;
-	private final int cost;
+	private final double cost;
 	private final int score;
 
 	public ListResult(List<ResultNode> resultNodes, int score) {
 		this.score = score;
 		this.resultNodes = resultNodes;
 		this.cost = resultNodes.stream()
-				.min(Comparator.comparingInt(ResultNode::cost))
+				.min(Comparator.comparingDouble(ResultNode::cost))
 				.map(ResultNode::cost)
 				.orElse(DEFAULT_COST);
 	}
@@ -33,7 +33,7 @@ public class ListResult implements ResultNode {
 	}
 
 	@Override
-	public int cost() {
+	public double cost() {
 		return cost;
 	}
 

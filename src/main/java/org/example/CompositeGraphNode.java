@@ -1,15 +1,14 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class CompositeGraphNode implements GraphNode {
 	private final GraphNode left;
 	private final GraphNode right;
-	private final int[][] matrix;
+	private final double[][] matrix;
 
-	public CompositeGraphNode(GraphNode left, GraphNode right, int[][] matrix) {
+	public CompositeGraphNode(GraphNode left, GraphNode right, double[][] matrix) {
 		this.left = left;
 		this.right = right;
 		this.matrix = matrix;
