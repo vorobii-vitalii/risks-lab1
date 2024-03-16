@@ -26,6 +26,11 @@ public class LeafResultNode implements ResultNode {
 	}
 
 	@Override
+	public int quantity() {
+		return 1;
+	}
+
+	@Override
 	public double cost() {
 		return cost;
 	}
@@ -33,7 +38,7 @@ public class LeafResultNode implements ResultNode {
 	@Override
 	public void createGraph(GraphCreator graphCreator, @Nullable MutableNode parentNode) {
 		var newNode = mutNode(UUID.randomUUID().toString());
-		newNode.add(Label.of(paramName + " cost = " + cost + " score = " + expectedScore));
+		newNode.add(Label.of(paramName + " cost = " + ((int) cost) + " qty = " + quantity()));
 		if (parentNode != null) {
 			newNode.addLink(parentNode);
 		}

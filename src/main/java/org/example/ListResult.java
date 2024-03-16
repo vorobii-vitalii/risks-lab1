@@ -33,6 +33,11 @@ public class ListResult implements ResultNode {
 	}
 
 	@Override
+	public int quantity() {
+		return resultNodes.size();
+	}
+
+	@Override
 	public double cost() {
 		return cost;
 	}
@@ -44,7 +49,7 @@ public class ListResult implements ResultNode {
 			return;
 		}
 		var newNode = mutNode(UUID.randomUUID().toString());
-		newNode.add(Label.of("Cost = " + cost + " score = " + score));
+		newNode.add(Label.of("Min Cost = " + ((int) cost) + " Min Qty = " + quantity()));
 		if (parentNode != null) {
 			newNode.addLink(parentNode);
 		}

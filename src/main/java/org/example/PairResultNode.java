@@ -32,6 +32,11 @@ public class PairResultNode implements ResultNode {
 	}
 
 	@Override
+	public int quantity() {
+		return left.quantity() * right.quantity();
+	}
+
+	@Override
 	public double cost() {
 		return cost;
 	}
@@ -39,7 +44,7 @@ public class PairResultNode implements ResultNode {
 	@Override
 	public void createGraph(GraphCreator graphCreator, @Nullable MutableNode parentNode) {
 		var newNode = mutNode(UUID.randomUUID().toString());
-		newNode.add(Label.of("Cost = " + cost + " score = " + score + "{" + leftScore + ";" + rightScore + "}"));
+		newNode.add(Label.of("Cost = " + ((int) cost) + " qty = " + quantity() + "{" + leftScore + ";" + rightScore + "}"));
 		if (parentNode != null) {
 			newNode.addLink(parentNode);
 		}

@@ -13,4 +13,9 @@ public class LeafGraphNode implements GraphNode {
 	public ResultNode calculateResult(int expectedScore) {
 		return new LeafResultNode(costs[expectedScore - 1], paramName, expectedScore);
 	}
+
+	@Override
+	public String paramName() {
+		return paramName;
+	}
 }

@@ -61,6 +61,6 @@ public class Example {
 			count.incrementAndGet();
 			g.add(mutableNode);
 		}, null);
-		Graphviz.fromGraph(g).height(2000).width(2000).render(Format.PNG).toFile(new File("out/result.png"));
+		Graphviz.fromGraph(g).render(Format.PNG).toFile(new File("out/result.png"));
 	}
 }
